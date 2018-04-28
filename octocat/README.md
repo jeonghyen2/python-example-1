@@ -7,12 +7,12 @@ This outputs the example character Octocat
 Download the script and give execute permission to the script.
 
 ```
-$ chmod 755 hangman.py
-$ ./hangman.py
+$ chmod 755 octocat.py
+$ ./octocat.py
 
 or 
 
-$ python hangman.py
+$ python octocat.py
 ```
 
 ## Screenshot
