@@ -31,39 +31,39 @@ class Tictactoe:
         for i, item in enumerate(b):
             if i == 2 or i == 5 or i == 8:  # If the right edge char, print with newline
                 if item == 'X':
-                    print Fore.RED + item
+                    print(Fore.RED + item)
                 elif item == 'O':
-                    print Fore.GREEN + item
+                    print(Fore.GREEN + item)
                 else:
-                    print item
+                    print (item)
             else:
                 if item == 'X':
-                    print Fore.RED + item, "|",
+                    print (Fore.RED + item, "|")
                 elif item == 'O':
-                    print Fore.GREEN + item, "|",
+                    print (Fore.GREEN + item, "|")
                 else:
-                    print item, "|",
+                    print (item, "|")
 
     def ask_input(self, name):
         """ Ask a certain player to input a square number
 
         """
         while True:
-            i = raw_input("It is " + name + "'s turn. Mark a squre with '" + self.players[name] + "' (input q to quit game) : ")
+            i = input("It is " + name + "'s turn. Mark a squre with '" + self.players[name] + "' (input q to quit game) : ")
             try:
                 if i == 'q':
                     exit(0)
                 else:
                     val = int(i)
             except ValueError:
-                print Fore.YELLOW + "That's not an int. Input a square number 1-9"
+                print (Fore.YELLOW + "That's not an int. Input a square number 1-9")
                 continue
             else:
                 if val < 1 or val > 9:
-                    print Fore.YELLOW + "Pick a squre number 1-9"
+                    print (Fore.YELLOW + "Pick a squre number 1-9")
                     continue
                 elif val not in self.board:
-                    print Fore.YELLOW + "The square " + i + " has been picked"
+                    print (Fore.YELLOW + "The square " + i + " has been picked")
                     continue
                 else:
                     return val
@@ -107,9 +107,9 @@ class Tictactoe:
         return "go"
     
     def print_header(self):
-        print "##########################"
-        print "##      Tic-tac-toe     ##"
-        print "##########################"
+        print ("##########################")
+        print ("##      Tic-tac-toe     ##")
+        print ("##########################")
 
     def start_game(self, player):
         """ start game
@@ -125,11 +125,11 @@ class Tictactoe:
             state = self.check_game_state(x, y)  # Get the game state
             if "win" == state:
                 self.print_board()  # Print the final board
-                print "Game over. Win for " + self.current_player
+                print ("Game over. Win for " + self.current_player)
                 break
             elif "draw" == state:
                 self.print_board()  # Print the final board
-                print "Game over. Draw for two players"
+                print ("Game over. Draw for two players")
                 break
             else:
                 for key in self.players:
